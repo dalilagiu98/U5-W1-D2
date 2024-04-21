@@ -6,7 +6,6 @@ import lombok.ToString;
 
 @AllArgsConstructor
 @Getter
-@ToString
 public class Table {
     //ATTRIBUTES LIST:
     private int number;
@@ -14,5 +13,10 @@ public class Table {
     private String state;
     private double seatCost;
 
+    //METHODS:
+    public void print(){
+        System.out.println("Number of table: " + this.number);
+
+    }
 
 }
