@@ -1,16 +1,16 @@
 package dalilagiu9.U5W1D2.configuration;
 
-import dalilagiu9.U5W1D2.entities.Drink;
-import dalilagiu9.U5W1D2.entities.Menù;
-import dalilagiu9.U5W1D2.entities.Pizza;
-import dalilagiu9.U5W1D2.entities.Topping;
+import dalilagiu9.U5W1D2.entities.*;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Configuration
+@PropertySource("application.properties")
 public class MenùConfig {
 
     //BEANS TOPPING:
@@ -97,5 +97,19 @@ public class MenùConfig {
         pizzaList.add(salamiPizza());
 
         return new Menù(pizzaList, drinkList, toppingList);
+    }
+
+    //TABLE BEAN:
+    @Bean
+    public Table getTable(@Value("{seat.cost}") double seatCost) {
+        return new Table(1, 5, seatCost, true);
+    }
+    @Bean
+    public Table getTable2(@Value("{seat.cost}") double seatCost) {
+        return new Table(2, 7, seatCost, true);
+    }
+    @Bean
+    public Table getTable3(@Value("{seat.cost}") double seatCost) {
+        return new Table(3, 5, seatCost, true);
     }
 }

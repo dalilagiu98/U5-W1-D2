@@ -10,7 +10,6 @@ public class Table {
     //ATTRIBUTES LIST:
     private int number;
     private int maxNumberSeats;
-    private String state;
     private double seatCost;
     private boolean isFree;
 
