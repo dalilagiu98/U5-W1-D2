@@ -36,7 +36,7 @@ public class MenùConfig {
     }
 
     //BEANS DRINK:
-    @Bean
+    @Bean(name = "water")
     public Drink waterDrink(){
         return new Drink("Water", 0, 0.50);
     }
@@ -50,14 +50,14 @@ public class MenùConfig {
     }
 
     //BEANS PIZZA:
-    @Bean
+    @Bean(name = "margherita")
     public Pizza margheritaPizza(){
         List<Topping> toppingList = new ArrayList<>();
         toppingList.add(tomatoTopping());
         toppingList.add(cheeseTopping());
         return new Pizza("Margherita Pizza", toppingList);
     }
-    @Bean
+    @Bean(name = "hawaiian")
     public Pizza hawaiianPizza(){
         List<Topping> toppingList = new ArrayList<>();
         toppingList.add(tomatoTopping());
@@ -100,16 +100,16 @@ public class MenùConfig {
     }
 
     //TABLE BEAN:
-    @Bean
-    public Table getTable(@Value("{seat.cost}") double seatCost) {
+    @Bean(name = "Table1")
+    public Table getTable(@Value("${seat.cost}") double seatCost) {
         return new Table(1, 5, seatCost, true);
     }
-    @Bean
-    public Table getTable2(@Value("{seat.cost}") double seatCost) {
+    @Bean(name = "Table2")
+    public Table getTable2(@Value("${seat.cost}") double seatCost) {
         return new Table(2, 7, seatCost, true);
     }
-    @Bean
-    public Table getTable3(@Value("{seat.cost}") double seatCost) {
+    @Bean(name = "Table3")
+    public Table getTable3(@Value("${seat.cost}") double seatCost) {
         return new Table(3, 5, seatCost, true);
     }
 }
