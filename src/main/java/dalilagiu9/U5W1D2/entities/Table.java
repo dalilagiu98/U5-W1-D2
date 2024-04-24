@@ -12,10 +12,13 @@ public class Table {
     private int maxNumberSeats;
     private String state;
     private double seatCost;
+    private boolean isFree;
 
     //METHODS:
     public void print(){
         System.out.println("Number of table: " + this.number);
+        System.out.println("Number max of seats: " + this.maxNumberSeats);
+        System.out.println("Busy / Free : " + this.isFree);
 
     }
 
